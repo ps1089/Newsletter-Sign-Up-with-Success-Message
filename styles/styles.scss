@@ -1,0 +1,225 @@
+@import './mixins';
+@import './media_queries';
+@import './constants';
+
+*
+{
+    padding : 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar 
+{
+    display: none;
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+}
+
+body
+{
+    @include flex-prop(row,center,center);
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background-color: $primary-bg-color;
+}
+
+ul
+{
+    list-style: none;
+}
+
+button
+{
+    font-family: inherit;
+    width: 100%;
+    height: pxToRem(40px);
+    border-radius: pxToRem(7px);
+    border: none;
+    background-color: $primary-txt-color;
+    color: $sec-bg-color;
+    font-weight: 550;
+    transition: all 0.8s linear;
+
+    &:hover
+    {
+      background-color: $sp-bg-color; 
+      cursor: pointer;
+      box-shadow: 0px 3px 8px $sp-bg-color; 
+    }
+}
+
+.head
+{
+    font-size: 2.6rem;
+    color : $primary-txt-color;
+}
+
+p,ul
+{
+    font-size: 0.8rem;
+    color : $primary-txt-color;
+    line-height: 1.6;
+}
+
+.hide
+{
+    display: none !important; 
+}
+
+.hide-2
+{
+    visibility: hidden;
+}
+
+#container
+{
+    padding : 1rem;
+    border: none;
+    border-radius: pxToRem(20px);
+    background-color: $sec-bg-color;
+}
+
+#content-1
+{
+    width: pxToRem(660px);
+    @include flex-prop(row,space-between,stretch);
+    
+    #content
+    {
+        width: 55%;
+        padding-block : 2rem;
+        padding-inline : 2.1rem;
+       
+        #content-pt-1
+        {
+            display: grid;
+            row-gap: pxToRem(20px);
+           
+            ul  
+            {
+                display: grid;
+                row-gap : pxToRem(10px);
+                margin-bottom: pxToRem(35px);
+                
+                li 
+                {
+                    @include flex-prop(row,flex-start,center);
+                    gap : pxToRem(10px);
+                    
+                    img 
+                    {
+                        height: pxToRem(15px);
+                    }
+    
+                }
+            }
+        }
+        
+        form 
+        {
+            display: grid;
+
+            #email-indicator
+            {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: pxToRem(8px);
+                font-size: 0.75rem;
+                font-weight: 700;
+                
+                label 
+                {
+                    color : $primary-txt-color;
+                }
+                
+                span 
+                {
+                    color : $sp-bg-color-2;
+                    
+                }
+            
+            }
+            
+            #email-box
+            {
+                width : 100%;
+                height: pxToRem(40px);
+                border-radius : pxToRem(7px);
+                padding-inline : 5%;
+                margin-bottom: pxToRem(20px);
+                border : 1px solid $sec-txt-color;
+                outline: none;
+                font-weight: 550;
+                
+                &:invalid
+                {
+                    border : 1.5px solid $sp-bg-color-2;
+                    background-color: $sp-bg-color-1;
+                    color : $sp-bg-color-2;
+                }
+            
+            
+            }
+
+        }
+
+    }
+
+    #image-1
+    {
+        width: 44.2%;
+        background-image: url("/assets/images/illustration-sign-up-desktop.svg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        img 
+        {
+            display: none;
+        }
+    }
+    
+    
+}
+
+#content-2
+{
+    max-width : pxToRem(340px);
+    padding-inline : 1.2rem;
+    padding-block : 1.3rem;
+    display: grid;
+    row-gap: pxToRem(20px);
+    
+    #content2-pt-1
+    {
+        display: grid;
+        row-gap: pxToRem(20px);
+        img 
+        {
+            width : 2.7rem;
+        }
+        p 
+        {
+            span 
+            {
+                font-weight: bolder;
+            }
+        }
+    }
+
+    button 
+    {
+        height: pxToRem(45px);
+    }
+}
+
+
+
+
+
+
