@@ -25,7 +25,7 @@
         width: 100% !important;
         height: 100%;
         overflow: scroll;
-        flex-direction: column-reverse;
+        flex-direction: column-reverse !important;
         
         #content 
         {
